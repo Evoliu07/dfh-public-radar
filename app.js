@@ -215,11 +215,19 @@ function initNewsFilters() {
 }
 
 function renderQuestions(data) {
-  $('questions').innerHTML = (data.questions || []).map((question) => `
-    <details>
-      <summary>${esc(question)}</summary>
-      <p>先把公开事实、自己的判断和待核实的问题分开写。不要用一句“看好”代替依据；也不要把新闻标题当成产品结论。</p>
-    </details>`).join('');
+  $('questions').innerHTML = (data.questions || []).map((item, index) => {
+    const question = typeof item === 'string' ? item : item.q;
+    const answer = typeof item === 'string' ? '' : item.a;
+    const paragraphs = Array.isArray(answer) ? answer : (answer ? [answer] : []);
+    return `
+      <article class="qa">
+        <div class="qa-num">0${index + 1}</div>
+        <div>
+          <h3>${esc(question)}</h3>
+          ${paragraphs.map((p) => `<p>${esc(p)}</p>`).join('')}
+        </div>
+      </article>`;
+  }).join('');
 }
 
 async function init() {
