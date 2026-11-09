@@ -9,12 +9,6 @@ if (( DOW > 5 || HOUR < 8 || HOUR >= 19 )); then
   exit 0
 fi
 
-LOCK="/tmp/dfh-public-radar.lock"
-if ! mkdir "$LOCK" 2>/dev/null; then
-  exit 0
-fi
-trap 'rmdir "$LOCK"' EXIT
-
 mkdir -p logs
 {
   echo "--- $(date '+%Y-%m-%d %H:%M:%S') ---"
