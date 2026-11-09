@@ -2,7 +2,7 @@
   "meta": {
     "title": "东方红 · 公开信息学习台",
     "subtitle": "11 月双产品 · 只汇总公开资料",
-    "updated_at": "2026-11-09 11:34",
+    "updated_at": "2026-11-09 11:49",
     "data_date": "2026-11-06",
     "warnings": [],
     "sources": [
@@ -140,13 +140,13 @@
       },
       {
         "label": "恒生科技",
-        "value": 4079.04,
-        "change": 0.02
+        "value": 4076.68,
+        "change": -0.04
       },
       {
         "label": "恒生指数",
-        "value": 24529.1,
-        "change": 0.19
+        "value": 24515.95,
+        "change": 0.14
       }
     ],
     "lpr": {
