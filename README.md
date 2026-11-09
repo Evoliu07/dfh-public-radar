@@ -41,14 +41,19 @@ python3 -m venv .venv
 
 ## 自动更新
 
-当前用 macOS LaunchAgent 在本机运行：工作日 08:00–19:00 每 30 分钟执行一次：
+当前用 WorkBuddy 定时任务在本机运行：工作日每小时检查一次（脚本内限制 08:00–19:00）：
 
 ```bash
-.venv/bin/python fetch_data.py
-.venv/bin/python publish_update.py
+./update_and_publish.sh
 ```
 
-只提交 `data/dashboard.json`。Mac 睡眠或关机时不运行；重新唤醒后下一次定时会继续。
+脚本会：
+
+1. 运行 `fetch_data.py` 抓取公开数据；
+2. 运行 `publish_update.py`，只把 `data/dashboard.json` 同步到 GitHub；
+3. 没有变化时不产生新提交。
+
+Mac 睡眠或关机时不运行；重新唤醒后下一次定时会继续。
 
 数据源：
 
