@@ -22,8 +22,9 @@ index.html              页面
 styles.css              样式
 app.js                  前端渲染
 fetch_data.py           抓取公开数据，写 data/dashboard.json
+publish_update.py       把 data/dashboard.json 同步到 GitHub
+update_and_publish.sh   本机定时任务入口
 data/dashboard.json     页面数据（自动生成）
-.github/workflows/update.yml   GitHub Actions 定时更新
 requirements.txt        Python 依赖
 ```
 
@@ -40,7 +41,14 @@ python3 -m venv .venv
 
 ## 自动更新
 
-GitHub Actions 在工作日 07:30、09:00–17:30 每 30 分钟、18:00 抓一次公开数据，并只提交 `data/dashboard.json`。
+当前用 macOS LaunchAgent 在本机运行：工作日 08:00–19:00 每 30 分钟执行一次：
+
+```bash
+.venv/bin/python fetch_data.py
+.venv/bin/python publish_update.py
+```
+
+只提交 `data/dashboard.json`。Mac 睡眠或关机时不运行；重新唤醒后下一次定时会继续。
 
 数据源：
 
@@ -49,6 +57,8 @@ GitHub Actions 在工作日 07:30、09:00–17:30 每 30 分钟、18:00 抓一�
 - 东方财富、财联社、中国基金报：公开新闻标题
 - 百度经济日历：宏观事件
 - akshare：公开数据接口封装
+
+> 如果以后要改成 GitHub Actions 原生定时，需要给 GitHub 授权 `workflow` 权限，再添加 `.github/workflows/update.yml`。目前没有使用这个方案，因为现有授权没有 workflow 权限。
 
 ## 注意
 
