@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>东方红 · 公开信息学习台</title>
+<meta name="description" content="东方红嘉俊均衡、东方红益鑫纯债的公开信息学习页：产品要素、政策与事件、市场温度、公开新闻。仅用于个人学习，不构成投资建议。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="brand">
+      <div class="mark">东</div>
+      <div>
+        <b>东方红 · 公开信息学习台</b>
+        <small>11 月双产品 / 只汇总公开资料</small>
+      </div>
+    </div>
+    <div class="meta">
+      <span>更新 <b id="updated">—</b></span>
+      <span class="dot"></span>
+      <span>数据日 <b id="data-date">—</b></span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">PUBLIC RESEARCH DESK</div>
+      <h1>11 月两只产品，<br>先看什么？</h1>
+      <p class="lede">嘉俊均衡还在发行期，益鑫纯债是已运行的纯债产品。把公开信息拆成四层：产品要素、政策与事件、市场温度、新闻雷达。先看事实，再看影响。</p>
+      <div class="hero-tags">
+        <span>只汇总公开资料</span>
+        <span>不构成投资建议</span>
+        <span>每 30 分钟更新</span>
+      </div>
+      <div class="warning" id="warning"></div>
+    </div>
+    <div class="hero-side" id="hero-side">
+      <div class="mini-stat"><b>—</b><span>10Y 国债</span></div>
+      <div class="mini-stat"><b>—</b><span>30Y 国债</span></div>
+      <div class="mini-stat"><b>—</b><span>沪深300</span></div>
+      <div class="mini-stat"><b>—</b><span>恒生科技</span></div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="products-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 · PRODUCTS</div>
+          <h2>两只产品，不同看法</h2>
+        </div>
+        <p>嘉俊是“新发产品”，没有历史业绩；益鑫是“已运行纯债”，有净值与回撤。两张卡不要用同一把尺子。</p>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="section" id="events-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">02 · CALENDAR</div>
+          <h2>政策与事件：会影响什么</h2>
+        </div>
+        <p>只保留对利率、信用、权益风险偏好有影响的事件；产品发行/募集节点单独标出。</p>
+      </div>
+      <div class="events" id="events"></div>
+    </section>
+
+    <section class="section" id="market-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">03 · MARKET</div>
+          <h2>市场温度：先看利率</h2>
+        </div>
+        <p>纯债看利率与资金面，均衡产品还要看权益与港股。指标只做背景，不做买卖信号。</p>
+      </div>
+      <div class="market-grid" id="market"></div>
+      <div class="index-grid" id="indices"></div>
+      <div class="explainer">10Y/30Y 国债收益率上行，债券价格通常下行；久期越长，利率波动对净值的影响通常越大。对嘉俊均衡，还要同时看股票仓位、行业风格和港股暴露。</div>
+    </section>
+
+    <section class="section" id="news-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">04 · NEWS RADAR</div>
+          <h2>公开新闻，按产品归类</h2>
+        </div>
+        <p>标题、来源、时间和一句“为什么相关”。不转载全文，不做投资建议。</p>
+      </div>
+      <div class="news-toolbar" id="news-toolbar">
+        <button data-filter="全部" aria-pressed="true">全部</button>
+        <button data-filter="嘉俊" aria-pressed="false">嘉俊</button>
+        <button data-filter="益鑫" aria-pressed="false">益鑫</button>
+        <button data-filter="政策" aria-pressed="false">政策</button>
+        <button data-filter="债市" aria-pressed="false">债市</button>
+      </div>
+      <div class="news" id="news"></div>
+    </section>
+
+    <section class="section" id="questions-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">05 · QUESTIONS</div>
+          <h2>看完之后，问自己 5 个问题</h2>
+        </div>
+        <p>能用自己的话讲清楚，才算真的看懂。</p>
+      </div>
+      <div class="questions" id="questions"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="disclaimer" id="disclaimer">本页仅汇总公开信息，用于个人学习，不构成任何投资建议、产品推介或收益承诺。产品信息以基金管理人最新公告和基金合同为准。基金有风险，投资需谨慎。</p>
+    <p>数据来源：<span id="sources">—</span></p>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
